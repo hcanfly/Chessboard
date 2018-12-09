@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="ChessBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackMarbleBackground.jpg" id="2Yo-B3-Nc7">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="1200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="FWl-1F-0Sz" customClass="MessageView" customModule="ChessBoard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="40" width="800" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="PdI-wE-sew" customClass="ChessBoardView" customModule="ChessBoard" customModuleProvider="target">
+                                <rect key="frame" x="96" y="157" width="576" height="576"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="292-mv-gRr" customClass="CapturedPiecesView" customModule="ChessBoard" customModuleProvider="target">
+                                <rect key="frame" x="96" y="825" width="576" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="a2m-d8-7dS" customClass="CapturedPiecesView" customModule="ChessBoard" customModuleProvider="target">
+                                <rect key="frame" x="96" y="885" width="576" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="2Yo-B3-Nc7" id="Xqk-dW-Kfd"/>
+                        <outlet property="capturedBlackPiecesView" destination="292-mv-gRr" id="lHp-Mf-nFc"/>
+                        <outlet property="capturedWhitePiecesView" destination="a2m-d8-7dS" id="nH6-8N-PD5"/>
+                        <outlet property="chessboardView" destination="PdI-wE-sew" id="88h-4k-oyu"/>
+                        <outlet property="messageView" destination="FWl-1F-0Sz" id="il2-Hz-ewq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="420.98950524737637"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BlackMarbleBackground.jpg" width="320" height="568"/>
+    </resources>
+</document>
