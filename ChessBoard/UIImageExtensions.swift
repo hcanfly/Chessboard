@@ -13,7 +13,7 @@ public extension UIImage {
     
     func thumbnail(ofSize: CGSize, scale: CGFloat) -> UIImage? {
 
-        let imageData = UIImagePNGRepresentation(self)! as CFData
+        let imageData = self.pngData()! as CFData
         let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
         let imageSource = CGImageSourceCreateWithData(imageData, imageSourceOptions)
         let downsampledImageSize = max(ofSize.width, ofSize.height)

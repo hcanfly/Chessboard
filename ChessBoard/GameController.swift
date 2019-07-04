@@ -94,7 +94,7 @@ final class GameController: UIViewController, GameSessionDelegate, GameDelegate,
 
             self.currentInfoForPieceBeingMoved = PieceInfo(square: startSquare, isBlack: piece!.isBlack, type: piece!.pieceType)
 		} else {
-			recognizer.view!.superview!.bringSubview(toFront: recognizer.view!)
+			recognizer.view!.superview!.bringSubviewToFront(recognizer.view!)
 			let translation = recognizer.translation(in: self.view)
 			
 			let newCenter = CGPoint(x: recognizer.view!.center.x + translation.x, y: recognizer.view!.center.y + translation.y)
@@ -243,13 +243,13 @@ final class GameController: UIViewController, GameSessionDelegate, GameDelegate,
 		// Set up fade out effect
 		let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
 		fadeOutAnimation.toValue = 0.3
-		fadeOutAnimation.fillMode = kCAFillModeForwards
+		fadeOutAnimation.fillMode = CAMediaTimingFillMode.forwards
 		fadeOutAnimation.isRemovedOnCompletion = false
 		
 		// Set up path movement
 		let pathAnimation = CAKeyframeAnimation(keyPath: "position")
-		pathAnimation.calculationMode = kCAAnimationPaced
-		pathAnimation.fillMode = kCAFillModeForwards
+		pathAnimation.calculationMode = CAAnimationCalculationMode.paced
+		pathAnimation.fillMode = CAMediaTimingFillMode.forwards
 		pathAnimation.isRemovedOnCompletion = false
 		
 		let midPoint = CGPoint(x: self.chessboardView.frame.origin.x, y: viewOrigin.y)
@@ -262,7 +262,7 @@ final class GameController: UIViewController, GameSessionDelegate, GameDelegate,
 		pathAnimation.path = curvedPath
 		
 		let group = CAAnimationGroup()
-		group.fillMode = kCAFillModeForwards
+		group.fillMode = CAMediaTimingFillMode.forwards
 		group.isRemovedOnCompletion = false
 		group.animations = [fadeOutAnimation, pathAnimation]
 		group.duration = 2.5

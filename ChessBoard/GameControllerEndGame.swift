@@ -44,9 +44,9 @@ extension GameController {
 		let viewBounds = self.view.layer.bounds
 		fireworksEmitter.emitterPosition = CGPoint(x: viewBounds.size.width/2.0, y: viewBounds.size.height)
 		fireworksEmitter.emitterSize	= CGSize(width: viewBounds.size.width/2.0, height: 0.0)
-		fireworksEmitter.emitterMode	= kCAEmitterLayerOutline
-		fireworksEmitter.emitterShape	= kCAEmitterLayerLine
-		fireworksEmitter.renderMode		= kCAEmitterLayerAdditive
+		fireworksEmitter.emitterMode	= CAEmitterLayerEmitterMode.outline
+		fireworksEmitter.emitterShape	= CAEmitterLayerEmitterShape.line
+		fireworksEmitter.renderMode		= CAEmitterLayerRenderMode.additive
 		fireworksEmitter.seed = (arc4random()%100)+1
 		
 		// Create the rocket
@@ -115,13 +115,13 @@ extension GameController {
 		let horizontalOffset: CGFloat = SysUtils.deviceIsIPad ? 160.0 : 80.0
 		fireEmitter.emitterPosition = CGPoint(x: viewBounds.size.width/2.0, y: viewBounds.size.height - horizontalOffset)
 		fireEmitter.emitterSize	= CGSize(width: viewBounds.size.width/2.0, height: 0)
-		fireEmitter.emitterMode	= kCAEmitterLayerOutline
-		fireEmitter.emitterShape	= kCAEmitterLayerLine
+		fireEmitter.emitterMode	= CAEmitterLayerEmitterMode.outline
+		fireEmitter.emitterShape	= CAEmitterLayerEmitterShape.line
 		// with additive rendering the dense cell distribution will create "hot" areas
-		fireEmitter.renderMode		= kCAEmitterLayerAdditive
+		fireEmitter.renderMode		= CAEmitterLayerRenderMode.additive
 		
 		smokeEmitter.emitterPosition = CGPoint(x: viewBounds.size.width/2.0, y: viewBounds.size.height - horizontalOffset)
-		smokeEmitter.emitterMode	= kCAEmitterLayerPoints
+		smokeEmitter.emitterMode	= CAEmitterLayerEmitterMode.points
 		
 		// Create the fire emitter cell
 		let fire = CAEmitterCell()

@@ -69,7 +69,9 @@ final class GameSession: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserD
 			
 			case .notConnected:
 				print("\(self.sessionPeerID.displayName) Did not connect to peer: \(peerID.displayName)")
-		}
+        @unknown default:
+            fatalError("Unhandled switch statement in session")
+        }
 	}
 	
 	func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
