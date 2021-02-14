@@ -3,7 +3,7 @@
 //  ChessBoard
 //
 //  Copyright © 2018 Gary Hanson.
-//  Licensed under the MIT license, see LICENSE file
+//  Licensed under the Unlicense, see LICENSE file
 //
 
 import UIKit

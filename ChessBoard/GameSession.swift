@@ -3,8 +3,9 @@
 //  ChessBoard
 //
 //  Copyright © 2018 Gary Hanson.
-//  Licensed under the MIT license, see LICENSE file
+//  Licensed under the Unlicense, see LICENSE file
 //
+
 
 import UIKit
 import MultipeerConnectivity
@@ -40,7 +41,7 @@ final class GameSession: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserD
 
 	func sendMove(_ moves: [Move]) {
 		
-		//println("\(self.sessionPeerID.displayName) is sending moves.")
+		//print("\(self.sessionPeerID.displayName) is sending moves.")
         let encoder = JSONEncoder()
         
 		do {
@@ -110,7 +111,7 @@ final class GameSession: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserD
 	
 	func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping(Bool, MCSession?) -> Void) {
 		
-		//print("\(self.sessionPeerID.displayName) Received invitation from peer: \(peerID.displayName)")
+        //print("\(self.sessionPeerID.displayName) Received invitation from peer: \(peerID.displayName)")
 
 		if (peerID.displayName == self.sessionPeerID.displayName) {
 			return
@@ -149,7 +150,7 @@ final class GameSession: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserD
 	
 	func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
 
-		//print("\(self.sessionPeerID.displayName) Browser found peer: \(peerID.displayName)")
+        //print("\(self.sessionPeerID.displayName) Browser found peer: \(peerID.displayName)")
 		
 		if (peerID.displayName == self.sessionPeerID.displayName) {
 			return
@@ -163,12 +164,12 @@ final class GameSession: NSObject, MCSessionDelegate, MCNearbyServiceAdvertiserD
         let context = Data(bytes: &self.inviteTimeStamp, count: s)
         browser.invitePeer(peerID, to: self.session, withContext: context, timeout: 60)
 
-		//print("\(self.sessionPeerID.displayName) Browser inviting peer: \(peerID.displayName)")
+        //print("\(self.sessionPeerID.displayName) Browser inviting peer: \(peerID.displayName)")
 	}
 	
 	// A nearby peer has stopped advertising
 	func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-		//print("\(self.sessionPeerID.displayName) nearby peer: \(peerID.displayName) has stopped advertising")
+		print("\(self.sessionPeerID.displayName) nearby peer: \(peerID.displayName) has stopped advertising")
 	}
 	
 

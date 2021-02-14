@@ -17,4 +17,4 @@ When two players run the app on their devices the app uses MultipeerConnectivity
 
 ## License
 
-Chessboard is licensed under the MIT License. See the LICENSE file for more information, but basically this is sample code and you can do whatever you want with it.
+Chessboard is licensed under the Unlicense. See the LICENSE file for more information, but basically this is sample code and you can do whatever you want with it.

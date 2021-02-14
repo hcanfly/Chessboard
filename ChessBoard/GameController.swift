@@ -3,7 +3,7 @@
 //  ChessBoard
 //
 //  Copyright © 2018 Gary Hanson.
-//  Licensed under the MIT license, see LICENSE file
+//  Licensed under the Unlicense, see LICENSE file
 //
 
 import UIKit
@@ -75,7 +75,7 @@ final class GameController: UIViewController, GameSessionDelegate, GameDelegate,
 				}
 				
 				self.gameSession.sendMove(moves)
-				if gameIsEnding == false {
+                if self.gameIsEnding == false {
 					self.enableMoveFor(.forNone)
 					self.setStatusDisplay(.waitForTurn)
 					if self.kingIsInCheck == true {
@@ -274,15 +274,15 @@ final class GameController: UIViewController, GameSessionDelegate, GameDelegate,
 	
 	func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
 	
-		self.addCapturedPieceToCollection()		// after animation is done add piece to capture pieces tray
+		self.addCapturedPieceToCollection()		// after animation is done add piece to captured pieces tray
 	}
 	
 	private func addCapturedPieceToCollection() {
 	
 		let captureView = self.capturedPiece!.piece.isBlack ? self.capturedBlackPiecesView : self.capturedWhitePiecesView
-		let temp = self.imageViewForAnimation!.image
+		let temp = self.imageViewForAnimation!.image!
 		
-		captureView?.addCapturedPieceToCollection(temp!, capturedPiece: self.capturedPiece!)
+		captureView?.addCapturedPieceToCollection(temp, capturedPiece: self.capturedPiece!)
 		
 		self.imageViewForAnimation!.removeFromSuperview()
 		self.imageViewForAnimation = nil

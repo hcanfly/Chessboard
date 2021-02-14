@@ -39,5 +39,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+    <key>NSLocalNetworkUsageDescription</key>
+        <string>Exchange data with nearby devices running the PeerTrack app.</string>
+        <key>NSBonjourServices</key>
+        <array>
+            <string>_chess-mc._tcp</string>
+        </array>
 </dict>
 </plist>
