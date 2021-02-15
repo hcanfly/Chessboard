@@ -167,6 +167,7 @@
 				TargetAttributes = {
 					3EF2C6691A1144D90006086A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 5EP5YM7PC7;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -364,7 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5EP5YM7PC7;
 				INFOPLIST_FILE = ChessBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.garyhanson.$(PRODUCT_NAME:rfc1034identifier)";
@@ -380,7 +381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5EP5YM7PC7;
 				INFOPLIST_FILE = ChessBoard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.garyhanson.$(PRODUCT_NAME:rfc1034identifier)";
